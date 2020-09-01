@@ -60,10 +60,7 @@ def get_categories(page):
             'link': card.find('a')['href']
         }
 
-        questions = get_questions_from_category(category_data)
-
-        category_data['questions'] = questions
-
+        category_data['questions'] = get_questions_from_category(category_data)
         categories.append(category_data)
 
     return categories
